@@ -86,3 +86,8 @@ Specific to these libraries, the simulator grader and Carla use the following:
 | OpenMP | N/A | N/A |
 
 We are working on a fix to line up the OpenCV versions between the two.
+
+### Acknowledgments
+
+Training data and scripts to train the model were obtained from:
+https://github.com/marcomarasca/SDCND-Traffic-Light-Detection
