@@ -71,7 +71,6 @@ class TLDetector(object):
             self.waypoint_tree = KDTree(self.waypoints_2d)
 
     def traffic_cb(self, msg):
-        #rospy.loginfo("Received tl info in topic '/vehicle/traffic_lights'.")
         self.lights = msg.lights
 
     def image_cb(self, msg):
@@ -82,7 +81,6 @@ class TLDetector(object):
             msg (Image): image from car-mounted camera
 
         """
-        rospy.logwarn("/image_color received")
         self.has_image = True
         self.camera_image = msg
         light_wp, state = self.process_traffic_lights()
@@ -157,7 +155,6 @@ class TLDetector(object):
             car_wp_idx = self.get_closest_waypoint(
                 self.pose.pose.position.x, self.pose.pose.position.y)
 
-        # TODO find the closest visible traffic light (if one exists)
         diff = len(self.waypoints.waypoints)
         for i, light in enumerate(self.lights):
             line = stop_line_positions[i]
